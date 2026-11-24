@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export interface HeroSlide {
@@ -25,30 +25,30 @@ interface HeroCarouselProps {
 export default function HeroCarousel({
     slides,
     autoPlay = true,
-    interval = 6000,
+    interval = 5000,
     height = "min-h-[620px]",
 }: HeroCarouselProps) {
     const [current, setCurrent] = useState(0);
 
-    const nextSlide = () => {
-        setCurrent((prev) => (prev + 1) % slides.length);
-    };
+    // const nextSlide = () => {
+    //     setCurrent((prev) => (prev + 1) % slides.length);
+    // };
 
-    const prevSlide = () => {
-        setCurrent((prev) =>
-            prev === 0 ? slides.length - 1 : prev - 1
-        );
-    };
+    // const prevSlide = () => {
+    //     setCurrent((prev) =>
+    //         prev === 0 ? slides.length - 1 : prev - 1
+    //     );
+    // };
 
     useEffect(() => {
         if (!autoPlay || slides.length <= 1) return;
-      
+
         const timer = setInterval(() => {
-          setCurrent((prev) => (prev + 1) % slides.length);
+            setCurrent((prev) => (prev + 1) % slides.length);
         }, interval);
-      
+
         return () => clearInterval(timer);
-      }, [autoPlay, interval, slides.length]);
+    }, [autoPlay, interval, slides.length]);
     if (!slides.length) return null;
 
     const slide = slides[current];
@@ -58,14 +58,21 @@ export default function HeroCarousel({
             className={`relative w-full ${height} overflow-hidden bg-black`}
         >
 
+
             {/* Background image */}
             <AnimatePresence mode="sync">
                 <motion.div
                     key={slide.id}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
+                    initial={{ opacity: 0, scale: 1 }}
+                    animate={{ opacity: 1, scale: 1.15 }}
+                    exit={{ opacity: 0, scale: 1.2 }}
+                    transition={{
+                        opacity: { duration: 1 },
+                        scale: {
+                            duration: 12,
+                            ease: "linear",
+                        },
+                    }}
                     className="absolute inset-0"
                     style={{
                         backgroundImage: `url("${slide.image}")`,
@@ -75,11 +82,12 @@ export default function HeroCarousel({
                 />
             </AnimatePresence>
 
+
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/60 z-[1]" />
 
             {/* Hero content */}
-            <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 min-h-[620px] flex items-center">
+            <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 min-h-[780px] flex items-center">
 
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -87,7 +95,7 @@ export default function HeroCarousel({
                         initial={{ opacity: 0, y: 35 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.8 }}
                         className="max-w-[780px] text-white pt-10"
                     >
 
@@ -114,49 +122,24 @@ export default function HeroCarousel({
             {/* Previous button */}
             {slides.length > 1 && (
                 <>
-                    <button
+                    {/* <button
                         onClick={prevSlide}
                         aria-label="Previous slide"
                         className="absolute z-20 left-4 lg:left-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition"
                     >
                         <ChevronLeft size={26} />
-                    </button>
+                    </button> */}
 
                     {/* Next button */}
-                    <button
+                    {/* <button
                         onClick={nextSlide}
                         aria-label="Next slide"
                         className="absolute z-20 right-4 lg:right-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition"
                     >
                         <ChevronRight size={26} />
-                    </button>
+                    </button> */}
                 </>
             )}
-
-            {/* Slide indicators */}
-            <div className="absolute z-20 bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
-
-                {slides.map((item, index) => (
-                    <button
-                        key={item.id}
-                        onClick={() => setCurrent(index)}
-                        aria-label={`Go to slide ${index + 1}`}
-                        aria-current={current === index ? "true" : undefined}
-                        className={`h-2.5 rounded-full transition-all duration-300 ${current === index
-                                ? "w-10 bg-red-500"
-                                : "w-2.5 bg-white/60 hover:bg-white"
-                            }`}
-                    />
-                ))}
-
-            </div>
-
-            {/* Slide counter */}
-            <div className="absolute z-20 bottom-8 right-8 text-white text-sm tracking-widest">
-                {String(current + 1).padStart(2, "0")} /{" "}
-                {String(slides.length).padStart(2, "0")}
-            </div>
-
         </section>
     );
 }

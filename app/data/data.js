@@ -13,7 +13,7 @@ export const homeSlides = [
       title: "Fabrication Services",
       description:
         "Our workshop is equipped for precise fabrication of structural steel, pipe spools, pressure vessels, and custom components. We combine skilled craftsmanship with rigorous quality control to meet your detailed design and operational demands.",
-      image: "/images/fabrication.jpg",
+      image: "https://res.cloudinary.com/dzhpdvoqd/image/upload/v1795559266/hero-imageot_f51g3p.jpg",
       buttonText: "Contact Us",
       buttonLink: "/contact",
     },
@@ -22,7 +22,7 @@ export const homeSlides = [
       title: "Engineering Excellence",
       description:
         "We provide reliable engineering solutions, technical expertise and innovative approaches to complex industrial challenges.",
-      image: "/images/engineering.jpg",
+      image: "https://res.cloudinary.com/dzhpdvoqd/image/upload/v1795559266/otoab_jpklyq.jpg",
       buttonText: "Explore Services",
       buttonLink: "/services",
     },
