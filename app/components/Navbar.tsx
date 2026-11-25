@@ -1,18 +1,11 @@
 
 "use client";
-
+import {navLinks} from '@/app/data/data'
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Our Services", href: "/services" },
-  { name: "Our Products", href: "/products" },
-  { name: "Blog", href: "/blog" },
-];
 
 interface NavbarProps {
   logo?: string;
