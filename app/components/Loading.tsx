@@ -20,19 +20,19 @@ export default function SiteLoader() {
             aria-label="OTOAB International is loading"
             aria-hidden={hidden}
             className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-6 bg-[#101010] text-white transition-opacity duration-300 ease-out ${hidden
-                    ? "opacity-0 pointer-events-none invisible"
-                    : "opacity-100"
+                ? "opacity-0 pointer-events-none invisible"
+                : "opacity-100"
                 }`}
         >
             {/* Logo */}
             <div className="text-5xl sm:text-6xl font-black tracking-[0.12em]">
-                OTOAB<span className="text-red-600">.</span>
+                OTAOB<span className="text-red-600">.</span>
             </div>
 
             <div className="w-12 h-[3px] bg-red-600" />
 
             <h2 className="text-sm font-semibold tracking-[0.3em] uppercase">
-                OTOAB International
+                OTAOB International
             </h2>
 
             {/* Progress */}

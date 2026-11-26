@@ -50,9 +50,9 @@ export const homeSlides = [
 
 export const footerData = {
   about: {
-    title: 'About OTOAB',
+    title: 'About OTAOB',
     description:
-      'OTOAB International is committed to delivering reliable solutions, professional services and lasting value to clients and partners.',
+      'OTAOB International is committed to delivering reliable solutions, professional services and lasting value to clients and partners.',
   },
 
   office: {
@@ -78,3 +78,60 @@ export const footerData = {
     ],
   },
 };
+
+export const services = [
+  {
+    id: 1,
+    title: "Mechanical",
+    subtitle: "& HVAC",
+    description:
+      "HVAC, refrigeration, ventilation, ductwork and mechanical equipment installation.",
+    image: "/images/services/mechanical.jpg",
+    href: "/services#mechanical",
+  },
+  {
+    id: 2,
+    title: "Electrical",
+    subtitle: "Services",
+    description:
+      "Electrical installation, lighting, power distribution, generators and testing services.",
+    image: "/images/services/electrical.jpg",
+    href: "/services#electrical",
+  },
+  {
+    id: 3,
+    title: "Plumbing",
+    subtitle: "Services",
+    description:
+      "Water supply, drainage, sewage, pumps and sanitary plumbing solutions.",
+    image: "/images/services/plumbing.jpg",
+    href: "/services#plumbing",
+  },
+  {
+    id: 4,
+    title: "Fire",
+    subtitle: "Protection",
+    description:
+      "Fire hydrants, sprinklers, alarms, extinguishers and fire protection systems.",
+    image: "/images/services/fire-protection.jpg",
+    href: "/services#fire-protection",
+  },
+  {
+    id: 5,
+    title: "ELV",
+    subtitle: "Systems",
+    description:
+      "CCTV, access control, structured cabling, intercom and smart building systems.",
+    image: "/images/services/elv-systems.jpg",
+    href: "/services#elv",
+  },
+  {
+    id: 6,
+    title: "Facility",
+    subtitle: "Maintenance",
+    description:
+      "Maintenance for HVAC, generators, electrical, plumbing and building systems.",
+    image: "/images/services/facility-maintenance.jpg",
+    href: "/services#facility-maintenance",
+  },
+];

@@ -35,10 +35,10 @@ export default function Footer() {
             </div>
 
             {/* Main Footer Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-16 md:py-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-3 py-16 md:py-20">
 
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10">
 
                     {/* About */}
                     <div>
@@ -48,7 +48,7 @@ export default function Footer() {
                                 href="/"
                                 className="inline-block text-3xl font-extrabold tracking-wider"
                             >
-                                OTOAB<span className="text-red-600">.</span>
+                                OTAOB<span className="text-red-600">.</span>
                             </Link>
                         </div>
 
@@ -131,7 +131,7 @@ export default function Footer() {
 
                         <p className="text-gray-300 text-sm leading-7 mt-4 mb-6">
                             Subscribe to our newsletter for company updates, announcements
-                            and the latest news from OTOAB International.
+                            and the latest news from OTAOB International.
                         </p>
 
                         <form onSubmit={handleSubscribe} className="mb-8">

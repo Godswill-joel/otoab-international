@@ -104,13 +104,13 @@ export default function Navbar({ }: NavbarProps) {
           {/* Temporary brand text until logo is enabled */}
           <Link
             href="/"
-            className="text-xl sm:text-2xl font-bold tracking-tight text-white shrink-0"
+            className="text-3xl sm:text-3xl font-bold tracking-tight text-white shrink-0"
           >
-            OTOAB
+            OTAOB
             <span className="text-red-600">.</span>
           </Link>
 
-          {/* ── DESKTOP NAVIGATION ── */}
+
 
           <ul className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-10">
 
@@ -130,7 +130,7 @@ export default function Navbar({ }: NavbarProps) {
                   >
                     {link.name}
 
-                    {/* Animated underline */}
+
                     <span
                       className={`absolute -bottom-2 left-0 h-[2px] bg-red-600 transition-all duration-300 ${isActive
                         ? "w-full"
@@ -144,7 +144,7 @@ export default function Navbar({ }: NavbarProps) {
 
           </ul>
 
-          {/* ── DESKTOP CONTACT BUTTON ── */}
+ 
 
           <Link
             href="/contact"
@@ -153,7 +153,7 @@ export default function Navbar({ }: NavbarProps) {
             Contact Us
           </Link>
 
-          {/* ── MOBILE HAMBURGER ── */}
+   
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -184,7 +184,7 @@ export default function Navbar({ }: NavbarProps) {
         </div>
       </nav>
 
-      {/* ── MOBILE BACKDROP ── */}
+
 
 
       {isMobileMenuOpen && (
@@ -201,7 +201,7 @@ export default function Navbar({ }: NavbarProps) {
         className={`fixed top-0 left-0 right-0 z-[70] bg-[#101010] border-b border-white/10 shadow-2xl flex flex-col transition-transform duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
       >
-        {/* Mobile Header */}
+       
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
           <Link
             href="/"
@@ -221,7 +221,7 @@ export default function Navbar({ }: NavbarProps) {
           </button>
         </div>
 
-        {/* Mobile Navigation Links */}
+       
         <nav className="flex flex-col px-6 py-5 gap-2 max-h-[65vh] overflow-y-auto">
           {navLinks.map((link, index) => {
             const isActive = pathname === link.href;
@@ -250,7 +250,6 @@ export default function Navbar({ }: NavbarProps) {
           })}
         </nav>
 
-        {/* Mobile CTA */}
         <div className="px-6 py-5 border-t border-white/10">
           <Link
             href="/contact"
