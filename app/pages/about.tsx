@@ -47,8 +47,8 @@ export default function AboutSection() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
 
                             <div className="absolute bottom-8 left-8 right-8">
-                                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-red-400">
-                                    OTOAB International
+                                <p className="mb-2 text-2xs font-semibold uppercase tracking-[0.3em] text-red-600">
+                                    OTAOB International
                                 </p>
                                 <h3 className="max-w-sm text-3xl font-bold leading-tight text-white sm:text-4xl">
                                     Building possibilities. Delivering excellence.
@@ -63,7 +63,7 @@ export default function AboutSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.5, duration: 0.7 }}
-                            className="absolute -right-3 top-10 z-20 hidden rounded-xl border border-white/20 bg-[#171717] px-6 py-5 text-white shadow-2xl sm:block lg:-right-8"
+                            className="absolute -right-3 top-5 z-20 hidden rounded-xl border border-white/20 bg-[#171717] px-6 py-5 text-white shadow-2xl sm:block lg:-right-8"
                         >
                             <span className="block text-xs uppercase tracking-[0.25em] text-white/50">
                                 Our commitment
